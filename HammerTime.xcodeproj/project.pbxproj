@@ -19,6 +19,7 @@
 		2CF17F5317D8AACF006E828B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF17F5217D8AACF006E828B /* MainMenu.xib */; };
 		339BEB0019486C48004B7DDB /* UI.html in Resources */ = {isa = PBXBuildFile; fileRef = 339BEAFF19486C48004B7DDB /* UI.html */; };
 		339BEB0219486F14004B7DDB /* UI.css in Resources */ = {isa = PBXBuildFile; fileRef = 339BEB0119486F14004B7DDB /* UI.css */; };
+		339BEB041948B1CD004B7DDB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339BEB031948B1CD004B7DDB /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		2CF17F5217D8AACF006E828B /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		339BEAFF19486C48004B7DDB /* UI.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = UI.html; sourceTree = "<group>"; };
 		339BEB0119486F14004B7DDB /* UI.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = UI.css; sourceTree = "<group>"; };
+		339BEB031948B1CD004B7DDB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				339BEB041948B1CD004B7DDB /* QuartzCore.framework in Frameworks */,
 				2C136A4217641236004C7401 /* WebKit.framework in Frameworks */,
 				2C136A2517641106004C7401 /* Cocoa.framework in Frameworks */,
 			);
@@ -77,6 +80,7 @@
 		2C136A2317641106004C7401 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				339BEB031948B1CD004B7DDB /* QuartzCore.framework */,
 				2C136A4117641236004C7401 /* WebKit.framework */,
 				2C136A2417641106004C7401 /* Cocoa.framework */,
 				2C136A2617641106004C7401 /* Other Frameworks */,
@@ -291,7 +295,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HammerTime/HammerTime-Prefix.pch";
 				INFOPLIST_FILE = "HammerTime/HammerTime-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = HammerTime;
 				WRAPPER_EXTENSION = app;
 			};
@@ -304,7 +308,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HammerTime/HammerTime-Prefix.pch";
 				INFOPLIST_FILE = "HammerTime/HammerTime-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = HammerTime;
 				WRAPPER_EXTENSION = app;
 			};

@@ -2,8 +2,8 @@
 //  AppDelegate.h
 //  ExampleApp-OSX
 //
-//  Created by Marcus Westin on 6/8/13.
-//  Copyright (c) 2013 Marcus Westin. All rights reserved.
+//  Created by Robert Brauer on 21/05/14.
+//  Copyright (c) 2014 Robert Brauer. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>

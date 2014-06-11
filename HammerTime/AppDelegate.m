@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  ExampleApp-OSX
 //
-//  Created by Marcus Westin on 6/8/13.
-//  Copyright (c) 2013 Marcus Westin. All rights reserved.
+//  Created by Robert Brauer on 21/05/14.
+//  Copyright (c) 2014 Robert Brauer. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -13,12 +13,29 @@
 @implementation AppDelegate {
     WebView* _webView;
     WebViewJavascriptBridge* _bridge;
+    NSString* _currentAppName;
+    CFTimeInterval _sessionTime;
+    Boolean appHasPermission;
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    // See if we have accessibility permissions, and if not, prompt the user to
+    // visit System Preferences.
+    NSDictionary *options = @{(__bridge id)kAXTrustedCheckOptionPrompt: @YES};
+    appHasPermission = AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef)options);
+    
+    //Set up Web UI
     [self _initWebView];
-    //[self _createObjcButtons];
+        //[self _createObjcButtons];
+    
+    _sessionTime = CACurrentMediaTime(); //Start initial tracking session
+    
+    [NSTimer scheduledTimerWithTimeInterval:1.0
+                                     target:self
+                                   selector:@selector(theAction)
+                                   userInfo:nil
+                                    repeats:YES];
 }
 
 - (void)_initWebView {
@@ -83,5 +100,64 @@
         NSLog(@"testJavascriptHandler responded: %@", response);
     }];
 }*/
+
+-(void) theAction {
+    NSRunningApplication* runningApp = [[NSWorkspace sharedWorkspace] frontmostApplication];
+    //NSLog(@"Active application is: %@", runningApp.bundleIdentifier );
+    
+    if (![_currentAppName isEqualToString:runningApp.localizedName]) //Check if it's a new app... if so, list it and add time stamp
+    {
+        CFTimeInterval elapsedTime = CACurrentMediaTime() - _sessionTime; //how long the app has been used
+        _sessionTime = CACurrentMediaTime(); //new session start
+        
+        NSDate *now = [NSDate date]; //get the current time for display
+        NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+        [outputFormatter setDateFormat:@"HH:mm"];
+        
+        NSLog(@"%@ (%i sec) - %@ \n", [outputFormatter stringFromDate:now], (int) (elapsedTime + 0.5), _currentAppName);
+        
+        _currentAppName = runningApp.localizedName; //new app
+        
+        pid_t pid = [runningApp processIdentifier];
+        
+        if (!appHasPermission) {
+            return; // we don't have accessibility permissions
+            
+            // Get the accessibility element corresponding to the frontmost application.
+            AXUIElementRef appElem = AXUIElementCreateApplication(pid);
+            if (!appElem) {
+                return;
+            }
+            
+            // Get the accessibility element corresponding to the frontmost window
+            // of the frontmost application.
+            AXUIElementRef window = NULL;
+            if (AXUIElementCopyAttributeValue(appElem,
+                                              kAXFocusedWindowAttribute, (CFTypeRef*)&window) != kAXErrorSuccess) {
+                CFRelease(appElem);
+                return;
+            }
+            
+            // Finally, get the title of the frontmost window.
+            CFStringRef title = NULL;
+            AXError result = AXUIElementCopyAttributeValue(window, kAXTitleAttribute,
+                                                           (CFTypeRef*)&title);
+            
+            // At this point, we don't need window and appElem anymore.
+            CFRelease(window);
+            CFRelease(appElem);
+            
+            if (result != kAXErrorSuccess) {
+                // Failed to get the window title.
+                return;
+            }
+            
+            // Success! Now, do something with the title, e.g. copy it somewhere.
+            
+            // Once we're done with the title, release it.
+            CFRelease(title);
+        }
+    }
+}
 
 @end
