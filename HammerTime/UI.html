@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="UI.css">
+</head>
+<body>
+	<div id="timesheet">
+		<div>
+			<div>
+				Monday - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+			</div>
+		</div>
+		<div>
+			<div>
+				Tuesday - At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+			</div>
+		</div>
+		<div>
+			<div>
+				Wednesday Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.
+			</div>
+		</div>
+		<div id="today">
+			<div>
+				<button id="button">CLICK ME</button>
+				<p id="log">logbook</p>
+			</div>
+		</div>
+		<div>
+			<div>
+				Friday - Dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.
+			</div>
+		</div>
+	</div>
+	<script>
+	window.onerror = function(err) {
+		log('window.onerror: ' + err)
+	}
+    
+    function connectWebViewJavascriptBridge(callback) {
+		if (window.WebViewJavascriptBridge) {
+			callback(WebViewJavascriptBridge)
+		} else {
+			document.addEventListener('WebViewJavascriptBridgeReady', function() {
+                callback(WebViewJavascriptBridge)
+            }, false)
+		}
+	}
+    
+	connectWebViewJavascriptBridge(function(bridge) {
+        var uniqueId = 1
+        
+        function log(message, data) {
+        	var log = document.getElementById('log')
+        	var el = document.createElement('p')
+        	el.className = 'logLine'
+        	el.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data)
+        
+        	if (log.children.length) {
+                log.insertBefore(el, log.children[0])
+            } else {
+                log.appendChild(el)
+            }
+        }
+        
+        bridge.init(function(message, responseCallback) {
+            log('JS got a message', message)
+            var data = { 'Javascript Responds':'Wee!' }
+            log('JS responding with', data)
+            responseCallback(data)
+        })
+                                   
+        document.getElementById('button').onclick = function(e) {
+            e.preventDefault()
+            var data = 'Hello from JS button'
+            log('JS sending message', data)
+            bridge.send(data, function(responseData) {
+                log('JS got response', responseData)
+            })
+        }
+    })
+	</script>
+</body>
+</html>

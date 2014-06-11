@@ -17,6 +17,8 @@
 		2C1562C5176BA9FF00B4AE50 /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2C1562C3176BA9FF00B4AE50 /* WebViewJavascriptBridge.js.txt */; };
 		2C1562C6176BA9FF00B4AE50 /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1562C4176BA9FF00B4AE50 /* WebViewJavascriptBridge.m */; };
 		2CF17F5317D8AACF006E828B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF17F5217D8AACF006E828B /* MainMenu.xib */; };
+		339BEB0019486C48004B7DDB /* UI.html in Resources */ = {isa = PBXBuildFile; fileRef = 339BEAFF19486C48004B7DDB /* UI.html */; };
+		339BEB0219486F14004B7DDB /* UI.css in Resources */ = {isa = PBXBuildFile; fileRef = 339BEB0119486F14004B7DDB /* UI.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		2C1562C3176BA9FF00B4AE50 /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewJavascriptBridge.js.txt; sourceTree = "<group>"; };
 		2C1562C4176BA9FF00B4AE50 /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
 		2CF17F5217D8AACF006E828B /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		339BEAFF19486C48004B7DDB /* UI.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = UI.html; sourceTree = "<group>"; };
+		339BEB0119486F14004B7DDB /* UI.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = UI.css; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 		2C136A2A17641106004C7401 /* HammerTime */ = {
 			isa = PBXGroup;
 			children = (
+				339BEAFF19486C48004B7DDB /* UI.html */,
+				339BEB0119486F14004B7DDB /* UI.css */,
 				2C136A3617641106004C7401 /* AppDelegate.h */,
 				2C136A3717641106004C7401 /* AppDelegate.m */,
 				2C136A5917642704004C7401 /* ExampleApp.html */,
@@ -176,6 +182,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				339BEB0219486F14004B7DDB /* UI.css in Resources */,
+				339BEB0019486C48004B7DDB /* UI.html in Resources */,
 				2C1562C5176BA9FF00B4AE50 /* WebViewJavascriptBridge.js.txt in Resources */,
 				2C136A2F17641106004C7401 /* InfoPlist.strings in Resources */,
 				2C136A3517641106004C7401 /* Credits.rtf in Resources */,

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>93C75BA7-D28C-4EEB-B0E0-BB910FC6143C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HammerTime</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>46F2F70C-1E03-4500-AED5-E3E6AAA559B1</key>
+		<string>https://github.com/brewh0use/HammerTime.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HammerTime.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>46F2F70C-1E03-4500-AED5-E3E6AAA559B1</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/brewh0use/HammerTime.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>46F2F70C-1E03-4500-AED5-E3E6AAA559B1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>46F2F70C-1E03-4500-AED5-E3E6AAA559B1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HammerTime</string>
+		</dict>
+	</array>
+</dict>
+</plist>
