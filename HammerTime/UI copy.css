@@ -25,37 +25,29 @@ html, body { /*http://www.sitepoint.com/css-system-styles/*/
     padding: 2px 0 0 0;
 }
 
+
 #today {
 	background-color: white;
-	background-color: #f9f9f9;
 }
 
 .entry {
 	display: table;
-	border-spacing: 5px 3px;
+	border-spacing: 4px 2px;
 	width: 100%;
 	position: relative;
 }
 
-.project {
-	display: table-cell;
-	padding: 8px 9px;
-	vertical-align: top;
-	background-color: white;
-	
-	/*border-left: 2px solid #f00;
-	padding-left: 10px;*/
-}
-
 .p1 {
-	border-left: 4px solid #0066cc; 
-	box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+	border-left: 0px solid #0066cc; 
+	background-color: rgb(146, 225, 192) !important;
 }
 .p2 {
-	border-left: 4px solid #669900;
+	border-left: 0px solid #669900; 
+	background-color: #9FC6E7 !important;
 }
 .p3 {
-	
+	/*border: 1px dashed rgba(0,0,0,0.1);
+	background-color: rgba(0,0,0,0.01);*/
 }
 
 .project input {
@@ -84,33 +76,30 @@ html, body { /*http://www.sitepoint.com/css-system-styles/*/
 	position: absolute;
 	opacity: 0.1;
 	font-size: 24px;
-	top: 13px;
+	top: 12px;
 	right: 14px;
 	max-width: 70px;
+}
+
+.project {
+	display: table-cell;
+	padding: 8px 9px;
+	vertical-align: top;
+	background-color: rgba(0,0,0,0.02);
+	border-radius: 4px;
+	/*border-left: 2px solid #f00;
+	padding-left: 10px;*/
 }
 
 .project .description {
 	opacity: 0.6;
 }
 
-.project .details {
-	/*background-color: #eee;*/
-	margin-top: 10px;
-	padding-top: 10px;
-	padding-left: 3px;
-	padding-bottom: 4px;
-	border-top: 1px solid #eee;
-	font-size: 11px;
-}
-
-.suggestion {
-	border: 1px dashed rgba(0,0,0,0.15);
-	background-color: #f9f9f9;
-	box-shadow: none;
-}
-
 @media only screen and (min-width : 521px) {
 	#timesheet {
 	    width: 400px !important;
+	}
+	#today {
+		display: table-cell !important;
 	}
 }

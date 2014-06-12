@@ -67,7 +67,7 @@
     /*[_bridge callHandler:@"testJavascriptHandler" data:@{ @"foo":@"before ready" }];*/
     
     //Load page
-    NSString* htmlPath = [[NSBundle mainBundle] pathForResource:@"UI" ofType:@"html"];
+    NSString* htmlPath = [[NSBundle mainBundle] pathForResource:@"UI-template" ofType:@"html"];
     NSString* html = [NSString stringWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];
     [[_webView mainFrame] loadHTMLString:html baseURL:nil];
 }

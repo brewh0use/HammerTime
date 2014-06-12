@@ -20,6 +20,7 @@
 		339BEB0019486C48004B7DDB /* UI.html in Resources */ = {isa = PBXBuildFile; fileRef = 339BEAFF19486C48004B7DDB /* UI.html */; };
 		339BEB0219486F14004B7DDB /* UI.css in Resources */ = {isa = PBXBuildFile; fileRef = 339BEB0119486F14004B7DDB /* UI.css */; };
 		339BEB041948B1CD004B7DDB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339BEB031948B1CD004B7DDB /* QuartzCore.framework */; };
+		339BEB06194980B8004B7DDB /* UI-template.html in Resources */ = {isa = PBXBuildFile; fileRef = 339BEB05194980B8004B7DDB /* UI-template.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		339BEAFF19486C48004B7DDB /* UI.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = UI.html; sourceTree = "<group>"; };
 		339BEB0119486F14004B7DDB /* UI.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = UI.css; sourceTree = "<group>"; };
 		339BEB031948B1CD004B7DDB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		339BEB05194980B8004B7DDB /* UI-template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "UI-template.html"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				339BEAFF19486C48004B7DDB /* UI.html */,
+				339BEB05194980B8004B7DDB /* UI-template.html */,
 				339BEB0119486F14004B7DDB /* UI.css */,
 				2C136A3617641106004C7401 /* AppDelegate.h */,
 				2C136A3717641106004C7401 /* AppDelegate.m */,
@@ -188,6 +191,7 @@
 			files = (
 				339BEB0219486F14004B7DDB /* UI.css in Resources */,
 				339BEB0019486C48004B7DDB /* UI.html in Resources */,
+				339BEB06194980B8004B7DDB /* UI-template.html in Resources */,
 				2C1562C5176BA9FF00B4AE50 /* WebViewJavascriptBridge.js.txt in Resources */,
 				2C136A2F17641106004C7401 /* InfoPlist.strings in Resources */,
 				2C136A3517641106004C7401 /* Credits.rtf in Resources */,
